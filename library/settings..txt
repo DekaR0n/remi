@@ -1,0 +1,5 @@
+MAX_CUSTOMER_TIME = default;
+MAX_CASHIER_QUEUE = default;
+MAX_CASHIER = default;
+MAX_NEXT_CUSTOMER = default;
+MAX_CUSTOMER_CHECK = default;

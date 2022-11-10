@@ -3,4 +3,4 @@ project(list C)
 
 set(CMAKE_C_STANDARD 23)
 
-add_executable(list main.c shop.c)
+add_executable(list project/main.c library/shop.c)
