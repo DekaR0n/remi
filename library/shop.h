@@ -1,59 +1,57 @@
-#define __shop__
+#define shop_
 #ifndef __shop__
 
 #include "stdio.h"
 #include "stdlib.h"
 #include "unistd.h"
 
-typedef struct Visitor{
-    char* name;
+// Структура посетителя магазина.
+typedef struct Visitor {
+    char *name;
     int time;
     int sum;
 } Visitor;
 
-typedef struct QueueElement {
-    struct Visitor* visitor;
-    struct Queue* next;
-}
-
+// Структура элемента очереди.
 typedef struct Queue {
-    struct Queue* last;
-    struct Queue* first;
-    int length;
+    Visitor *visitor;
+    struct Queue *next;
 } Queue;
 
+// Структура очереди.
+typedef struct QueueCommon {
+    struct Queue *last;
+    struct Queue *first;
+    int length;
+} QueueCommon;
 
+// Структура касса.
 typedef struct CashRegister {
     bool val;
     int visitor_value;
     int cash;
-    struct Queue* current_queue;
+    QueueCommon *current_queue;
 } CashRegister;
 
 // ..
 
 //
-void push();
+void push(Queue* queue);
 
 //
-void pop();
+void pop(Queue* queue);
 
 // Возвращает элемент очереди
-Visitor* getElement();
+Visitor *getElement();
 
 // Печать работы магазина
 void show();
 
 // Возвращает имя человека в очереди
-char* get_name(){
-
-}
+char *get_name();
 
 // Возвращает сумму покупки.
-void get_value(){
-
-}
-
+void get_value();
 
 
 #endif //__shop__
